@@ -1,0 +1,41 @@
+<div class="card">
+  <img
+    src="/img/{{product.image}}"
+    class="card-img-top"
+    alt="{{product.title}}"
+    style="max-height: 400px;"
+  />
+  <div class="card-body">
+    <h5 class="card-title text-center">{{product.title}}</h5>
+    <h3 class="card-text text-center text-warning">${{product.price}}</h3>
+    <div class="text-center">
+      <hr />
+      <div class="my-5">
+        <h6 class="my-3">Product Description</h6>
+        {{{product.description}}}
+
+      </div>
+
+      <div class="text-center">
+
+        {{#if owner}}
+          <a
+            href="/products/edit/{{product._id}}"
+            class="btn btn-warning mx-3"
+          >Edit</a>
+          <a
+            href="/products/delete/{{product._id}}"
+            class="btn btn-danger mx-3"
+          >DELETE</a>
+
+        {{else}}
+          <a href="/cart/add/{{product._id}}" class="btn btn-warning mx-3">Add to Cart</a>
+
+        {{/if}}
+        <button onclick="history.back()" class="btn btn-primary">Back</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>

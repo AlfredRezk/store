@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-12 col-md-8 col-lg-6 mx-auto mt-5">
+    <div class="card shadow">
+      <div class="card-header text-center bg-warning text-light">
+        <h3>EDIT PRODUCT</h3>
+      </div>
+      <div class="card-body">
+        <form action="/products/edit" method="POST" enctype="multipart/form-data" novalidate>
+    
+            <div class="mb-3">
+              <input
+                type="text"
+                name="title"
+                placeholder="Product Title"
+                class="form-control"
+                value="{{product.title}}"
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="number"
+                name="price"
+                placeholder="Product Price"
+                class="form-control"
+                value="{{product.price}}"
+              />
+            </div>
+
+
+          <div class="mb-3">
+            <input
+              type="file"
+              name="image"
+              class="form-control"
+            />
+          </div>
+         
+          <div class="mb-3">
+            <label for="editor" class="form-label">Product Description</label>
+            <textarea
+            id="editor"
+              name="description"
+         
+          
+            >
+            {{product.description}}
+            </textarea>
+
+<input type="hidden" name="id" value="{{product._id}}">
+          </div>
+         
+
+        
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning"> EDIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

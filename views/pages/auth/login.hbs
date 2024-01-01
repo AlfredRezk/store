@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto mt-5">
+        <div class="card shadow">
+            <div class="card-header text-center bg-purple text-light">
+                <h3>Login </h3>
+            </div>
+            <div class="card-body">
+                <form action="/auth/login" method="POST">
+                    <div class="mb-3">
+                          <input type="text" name="username" placeholder="Username/Email" class="form-control" value="{{username}}">
+                    </div>
+    
+                    <div class="mb-3 position-relative">
+                          <input type="password" name="password" placeholder="Password " class="form-control" value="{{password}}">
+                          <i class="bi bi-eye-fill position-absolute password-btn" style="top:10px; right:10px; cursor: pointer"></i>
+            
+                    </div>
+
+
+                    <div class="mb-3 text-center">
+                        <p>Don't have an account? <a href="/auth/register" class="text-warning"> Sign-up </a></p>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary"> Sign In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

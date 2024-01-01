@@ -1,0 +1,42 @@
+{{#if products}}
+
+<ul class="list-group">
+    {{#each products}}
+
+  <li class="list-group-item d-flex align-items-center">
+
+    <img src="/img/{{product.image}}" alt="{{title}}" class="mx-5" style="max-height: 100px;">
+    <h3 class="mx-5"> {{product.title}}</h3>
+    <h3 class="mx-5 text-warning"> ${{product.price}}</h3>
+
+     <div class="btn-group ">
+        <a class="btn btn-secondary" href="/cart/{{product._id}}/inc"> + </a>
+        <button class="btn border" disabled>{{qty}} </button>
+        <a class="btn btn-secondary" href="/cart/{{product._id}}/dec"> - </a>
+     </div>
+
+<div class="flex-grow-1"></div>
+     <a class="btn btn-danger" href="/cart/{{product._id}}/delete"> DELETE</a>
+  </li>
+    {{/each}}
+
+</ul>
+
+<hr>
+
+<div class="d-flex my-2">
+    <div class="flex-grow-1"></div>
+    <h4>Total:  <span>${{totalPrice}}</span></h4>
+</div>
+<div class="d-flex my-2">
+    <div class="flex-grow-1"></div>
+    <button class="btn btn-warning"> CHECKOUT</button>
+</div>
+{{else}}
+    <h3 class="text-center">No Products</h3>
+{{/if}}
+
+
+<div class="text-center my-5">
+    <a href="/" class="btn btn-primary">BACK</a>
+</div>
